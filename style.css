@@ -1,0 +1,177 @@
+:root {
+    --dark: rgb(27, 27, 27);
+    --light: rgb(235, 235, 235);
+    --theme: rgb(255, 255, 255);
+    --tc: rgb(100, 100, 100);
+}
+
+/* poppins-regular - latin */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url(fonts/poppinsregular.woff2) format('woff2')
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+#Poppins {
+    font-family: 'Poppins'
+}
+
+@font-face {
+    font-family: 'Cascadia Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url(fonts/CascadiaMono.woff2) format('woff2')
+}
+
+#Cascadia {
+    font-family: 'Cascadia Mono';
+}
+
+body {
+    font-family: 'Poppins';
+    background-color: var(--dark);
+    margin: 0;
+    overflow: hidden;
+}
+
+.mainCanvas {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+}
+
+.bar {
+    position: relative;
+    mix-blend-mode: normal;
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    -webkit-app-region: drag;
+    color: rgb(173, 173, 173);
+    background-color: rgb(48, 48, 48);
+}
+
+.barCanvas {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 30px;
+}
+
+.windowNoDrag {
+    -webkit-app-region: no-drag;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 90px;
+    height: 30px;
+}
+
+.postEditorContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    visibility: hidden;
+    opacity: 0;
+    color: var(--light);
+    padding: 13px 22px;
+    font-size: 17px;
+    box-sizing: border-box;
+}
+
+.postEditorContainer::-webkit-scrollbar { 
+    display: none;
+}
+
+.postTitle {
+    font-size: 32px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 5px;
+}
+
+.postMetaContainer {
+    bottom: 0;
+    border-top: 3px solid var(--tc);
+    border-top-style: dashed;
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding-top: 10px;
+    color: var(--tc);
+    transition: color .2s ease-in-out, border-color .2s ease-in-out;
+}
+
+.postMetaTitle {
+    font-size: 20px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 5px;
+}
+
+.postMeta {
+    font-size: 16px;
+    font-family: 'Cascadia Mono', monospace;
+}
+
+.postMetaContainer:focus {
+    color: var(--light);
+}
+
+.postTitle:empty:before {
+    content:attr(data-placeholder);
+    color:var(--tc);
+}
+
+.ProseMirror-focused {
+    outline: 0;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+    color:var(--tc);
+    font-weight: bold;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+}
+
+code {
+    font-family: 'Cascadia Mono', monospace;
+    background-color: rgb(54,54,54);
+    font-weight: 500;
+}
+
+input {
+    all: unset;
+}
+
+p, ul {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+h1, h2, h3 {
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+::selection {
+    background: var(--theme);
+    color: var(--dark);
+}

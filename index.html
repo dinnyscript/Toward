@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline';">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+<body>
+    <canvas id='c' class="mainCanvas"></canvas>
+    <div id='titlebar' id="bar" class='bar'>
+        <!--<div style='position: absolute; text-align: center; width: 100%; bottom: 4px;'>Toward</div>-->
+        <!--<div style='position: absolute; text-align: center; left: 5px; bottom: 4px;'>  File | Help</div>-->
+        <canvas id='cbar' class='barCanvas'></canvas>
+        <div id='non-draggable' class="windowNoDrag"></div>
+    </div>
+    <div id="postEditorContainer" spellcheck='false' class="postEditorContainer">
+        <div id="postTitle" data-placeholder="Title" contenteditable="true" class="postTitle"></div>
+        <div id="tiptapContainer"></div>
+        <div id="postMetaContainer" class="postMetaContainer">
+            <div class="postMetaTitle">Metadata</div>
+            <div id="postMeta" class="postMeta"></div>
+        </div>
+    </div>
+    <script src="dist/bundle.js"></script>
+</body>
+
+</html>
