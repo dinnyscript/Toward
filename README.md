@@ -5,4 +5,4 @@ Minimalist day planner for the keyboard-oriented coder/gamer. Optimized for both
 * Simple keyboard controls for the majority of navigation
 * Focused day view that provides only what the user needs
 * Custom-made and easy to understand language for editing the entry metadata
-* Data locally stored in a database + interval tree hybrid for efficient retrieval
+* Database + interval tree hybrid for efficient retrieval of locally stored data
