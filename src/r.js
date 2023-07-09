@@ -2226,11 +2226,11 @@ function resize() {
     szs.elb.margins.side = 1;
     let widthThreshold = 1200;
     let widthFraction = .20;
-    let minSideMargin = 40;
+    let minSideMargin = 40 * 156 / 192;
     if (w >= widthThreshold) {
         szs.elb.margins.side *= widthFraction * w;
     } else {
-        szs.elb.margins.side *= Math.max((w - widthThreshold * (1 - 2 * widthFraction)) / 2, minSideMargin);
+        szs.elb.margins.side *= Math.max((w - widthThreshold * (1 - 2 * widthFraction)) / 2, minSideMargin * screen.scale);
     }
     
     postEditorContainer.style.width = (w - 2*szs.elb.margins.side - 2*szs.elb.editor.margin / screen.scale) + 'px';
