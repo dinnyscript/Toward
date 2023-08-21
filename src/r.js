@@ -187,6 +187,7 @@ let colors = {
         dark : greyscale(27),
         tc : greyscale(100),
         deselect : greyscale(85),
+        
     }
 }
 let root = document.querySelector(':root');
@@ -271,14 +272,14 @@ let szs = {
         dayView : {
             lineSpacingStretch : .2, //how much of a scaling factor to stretch line spacing when transitioning to dayview
             margins : {
-                top : 45,
+                top : 33,
             }
         }
     },
     elb : {
         shadeOsc : .05, //shading oscillations
         shadeOscFreq : 2,
-        frameWidth : 3,
+        frameWidth : 2.7,
         topIndent : 34,
         backArrow : 11.3,
         arrowVerticalHover : 4,
@@ -287,8 +288,8 @@ let szs = {
 
         maxYDisp : .4, //the fraction of the screen height that the elb can be maximally displaced by
         margins : {
-            top : 90,
-            bottom : 60,
+            top : 66,
+            bottom : 50,
             side : 0,
         },
 
@@ -1674,6 +1675,7 @@ class EventListBlock extends Block {
         let y0 = -screen.ch / 2;
         let width = (screen.cw - 2 * szs.elb.margins.side);
         let height = (screen.ch - (szs.elb.margins.top + szs.elb.margins.bottom));
+
         let top = y0 + barH / screen.scale + szs.elb.margins.top + (1 - dayView) * screen.ch * sz.maxYDisp;
         let left = this.x + this.state.xOffset - width/2;
         let right = left + width;
@@ -1699,6 +1701,10 @@ class EventListBlock extends Block {
         let updateEditing = 0;
         let earlyEditFade = Math.max(tt.edit.earlyFade - state.edit, 0) / tt.edit.earlyFade;
         let lateEditFade = Math.min(1 - state.edit, tt.edit.lateFade) / tt.edit.lateFade; 
+
+        /*let bgcolor = colors.gs.darker.pure();
+        ctx.fillStyle = bgcolor;
+        ctx.fillRect(left, top, width, height);*/
 
         this.editorContainer.style.opacity = 0;
         if (state.edit > 0) {
@@ -1957,6 +1963,7 @@ class EventListBlock extends Block {
         let titleLength = ctx.measureText(this.day.formatted()).width;
 
         //rendering the frame
+
         ctx.strokeStyle = highlight;
         
         ctx.lineWidth = sz.frameWidth;
@@ -1969,6 +1976,32 @@ class EventListBlock extends Block {
         ctx.lineTo(right, top);
         ctx.lineTo(left + sz.topIndent + (titleLength + 2 * sz.titleMargin) * lateEditFade, top);
         ctx.stroke();
+        
+        /*
+        ctx.lineWidth = sz.frameWidth;
+        ctx.lineCap = 'square';
+
+        ctx.strokeStyle = highlight;
+        vline(top, bottom, left, 1.5);
+        vline(top, bottom, right, 1.5);
+
+        ctx.beginPath();
+        let frameRadius = sz.frameWidth / 2;
+        ctx.moveTo(left + sz.topIndent, top);
+        ctx.lineTo(left, top);
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.moveTo(left, bottom);
+        ctx.lineTo(right, bottom);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(right, top);
+        ctx.lineTo(left + sz.topIndent + (titleLength + 2 * sz.titleMargin) * lateEditFade, top);
+        ctx.stroke();
+
+        ctx.lineCap = 'butt';*/
         
         ctx.globalAlpha = 1;
     }
@@ -2171,6 +2204,7 @@ let timechain = {
                 let r = Math.ceil(rightEndpt/spacing)+1;
                 for (let x = spacing * (-r + state[ci]%1); x < r*spacing; x += spacing) {
                     ctx.globalAlpha = prog * (1 - state.dayView * clamp(2 * Math.abs(x)/spacing, 0, 1));
+                    //ctx.globalAlpha = prog * (1 - state.dayView);
                     circle(x, dy, sz.circle);
                 }
                 if (i == end.layer) {

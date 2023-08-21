@@ -133,4 +133,4 @@ dist
 logo.svg
 
 # Save Data
-twrd.db
+savedata/

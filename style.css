@@ -9,25 +9,59 @@
 @font-face {
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 500;
-    src: url(fonts/poppinsregular.woff2) format('woff2')
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
+    font-weight: 300;
+    src: url(fonts/Poppins-Light.ttf) format('truetype')
 }
 
-#Poppins {
-    font-family: 'Poppins'
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url(fonts/Poppins-Regular.ttf) format('truetype')
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url(fonts/Poppins-Medium.ttf) format('truetype')
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url(fonts/Poppins-SemiBold.ttf) format('truetype')
+}
+
+/*
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url(fonts/Poppins-Bold.ttf) format('truetype')
+}*/
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    src: url(fonts/Poppins-ExtraBold.ttf) format('truetype')
 }
 
 @font-face {
     font-family: 'Cascadia Mono';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 100 900;
     src: url(fonts/CascadiaMono.woff2) format('woff2')
 }
-
-#Cascadia {
-    font-family: 'Cascadia Mono';
-}
+/*
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300 900;
+    src: url(fonts/Mona-Sans.woff2) format('woff2')
+}*/
 
 body {
     font-family: 'Poppins';
@@ -79,7 +113,7 @@ body {
     opacity: 0;
     color: var(--light);
     padding: 13px 22px;
-    font-size: 17px;
+    font-size: 15px;
     box-sizing: border-box;
 }
 
@@ -91,7 +125,7 @@ body {
     font-size: 32px;
     font-weight: bold;
     outline: 0;
-    margin-bottom: 5px;
+    margin-bottom: -3px;
 }
 
 .postMetaContainer {
@@ -113,7 +147,7 @@ body {
 }
 
 .postMeta {
-    font-size: 16px;
+    font-size: 15px;
     font-family: 'Cascadia Mono', monospace;
 }
 
@@ -160,15 +194,15 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 26px;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 22px;
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 19px;
 }
 
 ::selection {
