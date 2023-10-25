@@ -11,3 +11,9 @@ Minimalist day planner for the keyboard-oriented coder/gamer. Optimized for both
 * Focused day view that provides only what the user needs
 * Custom-made and easy to understand language for editing entry metadata
 * Database + interval tree hybrid for efficient retrieval of locally stored data
+## Video demo
+A basic showcase of some of the features listed above.
+
+<div align="center">
+  <video src="https://github.com/dinnyscript/Toward/assets/76710999/11851aa0-8d7a-4b71-89ff-3c9725ce8c84" type="video/mp4">
+</div>
